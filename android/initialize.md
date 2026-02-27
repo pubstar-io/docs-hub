@@ -17,7 +17,6 @@ Initialization PubStar SDK. Initialization must be called once before loading or
 ```kotlin
 
 PubStarAdManager.getInstance()
-    .setIsDebug(true)
     .setInitAdListener(object : InitAdListener {
         override fun onDone() {
             // callback when init done (ready to call load and show ad)

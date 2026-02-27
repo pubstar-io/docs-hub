@@ -2,7 +2,8 @@
 
 ## Requirements
 
-- Android >= 23
+- Android version >= 6.0
+- API level >= 23
 
 ## Installation
 
@@ -17,7 +18,7 @@ repositories {
 Dependency.
 
 ```bash
-implementation 'io.pubstar.mobile:ads:1.3.1'
+implementation 'io.pubstar.mobile:ads:1.5.0'
 ```
 
 ## Configuration
