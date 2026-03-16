@@ -17,7 +17,42 @@ repositories {
 Dependency.
 
 ```bash
-implementation 'io.pubstar.mobile:ads:1.3.1'
+implementation 'io.pubstar.mobile:ads:1.5.1'
+```
+
+### Ad Network Adapters (Optional)
+
+PubStar supports various third-party ad networks to maximize your fill rate. We highly recommend adopting a modular approach: **only install the adapters for the networks you actively use** to keep your app size optimized.
+
+Add the desired adapters to your Podfile alongside the core PubStar SDK:
+
+```ruby
+# Facebook
+implementation 'io.pubstar.facebook.adapter:ads:1.5.1'
+
+# Mintegral
+implementation 'io.pubstar.mintegral.adapter:ads:1.5.1'
+
+# Pangle
+implementation 'io.pubstar.pangle.adapter:ads:1.5.1'
+
+# InMobi
+implementation 'io.pubstar.inmobi.adapter:ads:1.5.1'
+
+# Appodeal
+implementation 'io.pubstar.appodeal.adapter:ads:1.5.1'
+
+# Yandex
+implementation 'io.pubstar.yandex.adapter:ads:1.5.1'
+
+# Vungle
+implementation 'io.pubstar.vungle.adapter:ads:1.5.1'
+
+# OfferWall
+implementation 'io.pubstar.offerwall.adapter:ads:1.5.1'
+
+# Unity
+implementation 'io.pubstar.unity.adapter:ads:1.5.1'
 ```
 
 ## Configuration

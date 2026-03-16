@@ -36,6 +36,28 @@
 4. Install the dependencies using `pod install`.
 5. Open your project in Xcode with the `.xcworkspace` file.
 
+### Ad Network Adapters (Optional)
+
+PubStar supports various third-party ad networks to maximize your fill rate. We highly recommend adopting a modular approach: **only install the adapters for the networks you actively use** to keep your app size optimized.
+
+Add the desired adapters to your Podfile alongside the core PubStar SDK:
+
+```ruby
+target 'YourAppName' do
+    use_frameworks!
+
+    # Core SDK (Required)
+    pod 'Pubstar'
+
+    # Optional Adapters - Choose the ones you need
+    pod 'PubStarPangleAdapter'
+    pod 'PubStarVungleAdapter'
+    pod 'PubStarMintegralAdapter'
+    pod 'PubStarUnityAdapter'
+    pod 'PubStarInMobiAdapter'
+end
+```
+
 ## Configuration
 
 ### 1. Update your Info.plist
