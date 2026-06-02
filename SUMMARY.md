@@ -17,6 +17,7 @@
   * [Interstitial, Open and Rewarded](android/ads-with-no-view.md)
   * [Banner](android/banner.md)
   * [Native](android/native.md)
+  * [Video](android/video.md)
 
 * **React Native SDK**
   * [Integration](react-native/integration.md)

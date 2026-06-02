@@ -1,6 +1,6 @@
 # Native
 
-Load and immediately show an Native ads by ID.
+Load and immediately show an Native ad by ID.
 
 ### Event
 
