@@ -9,6 +9,7 @@
   * [Interstitial, Open and Rewarded](ios/ads-with-no-view.md)
   * [Banner](ios/banner.md)
   * [Native](ios/native.md)
+  * [Video](ios/video.md)
   * [Troubleshooting](ios/troubleshooting.md)
 
 * **Android SDK**

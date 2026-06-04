@@ -9,24 +9,25 @@ PubStar supports two types of video ads:
 - In Stream: Video ads that play within video content. Requires a MediaPlayer instance to manage video playback.
 - Out Stream: Video ads that play outside of video content, typically within a native ad unit. Does not require a MediaPlayer instance. Including native video ads and interstitial, open and rewarded video ads.
 
-### Event
+## Event
 
 `AdLoaderListener`
-
 `AdShowedListener`
 
+## In Stream Video Ads
+
 ### API
+
+**`IMARequest.Builder`** provides a set of methods to configure the video ad, including:
 
 | Method              | Type          | Description                                                                                                                                      |
 | ------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `withMedia(player)` | `MediaPlayer` | Required for `IN_STREAM` format. Do not call this method if using `OUT_STREAM`                                                                   |
 | `withType(type)`    | `Enum`        | Receives the value `IMARequest.Type.IN_STREAM` or `IMARequest.Type.OUT_STREAM`.                                                                  |
-| `withSize(size)`    | `Enum`        | Required for `OUT_STREAM` format. Do not call this method for `IN_STREAM`. Receives the value `IMARequest.Size.Small` or `IMARequest.Size.Full`. |
+| `withSize(size)`    | `Enum`        | Required for `OUT_STREAM` format. Do not call this method for `IN_STREAM`. Receives the value `IMARequest.Size.Medium` or `IMARequest.Size.Full`. |
 | `withView(view)`    | `View`        | Required for `IN_STREAM` format. Do not call this method for `OUT_STREAM`. Pass the view containing the ad.                                      |
 
 ### Implementation
-
-#### In Stream Video Ads
 
 ```kotlin
 fun createVideo(buttonBinding: Button, callback: (mediaPlayer: MediaPlayer) -> Unit) {
@@ -68,11 +69,17 @@ this.createVideo(
 
 ```
 
-#### Out Stream Video Ads
+## Out Stream Video Ads
+
+### API
+
+**`IMARequest.Builder`** provides a set of methods to configure the video ad, including:
 
 | Enum              | Value            | Description                                                             |
 | ----------------- | ---------------- | ----------------------------------------------------------------------- |
-| `IMARequest.Type` | `Medium` and `Full` | `Medium` for Native ads, `Full` for Interstitial, Open and Rewarded ads |
+| `IMARequest.Size` | `Medium` and `Full` | `Medium` for Native ads, `Full` for Interstitial, Open and Rewarded ads |
+
+### Implementation
 
 ```kotlin
 val requestVideo = IMARequest.Builder(this)
