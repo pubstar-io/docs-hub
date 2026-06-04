@@ -2,7 +2,7 @@
 
 Load and immediately show a Video ad by ID.
 
-### Format
+## Format
 
 PubStar supports two types of video ads:
 
@@ -20,12 +20,11 @@ PubStar supports two types of video ads:
 
 **`IMARequest.Builder`** provides a set of methods to configure the video ad, including:
 
-| Method              | Type          | Description                                                                                                                                           |
-| ------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `withMedia(player)` | `MediaPlayer` | Required for `inStream` format. Do not call this method if using `outStream`                                                                          |
-| `withType(type)`    | `Enum`        | Receives the value `IMARequest.IMAType.inStream` or `IMARequest.IMAType.outStream`.                                                                   |
-| `withSize(size)`    | `Enum`        | Required for `outStream` format. Do not call this method for `inStream`. Receives the value `IMARequest.IMASize.medium` or `IMARequest.IMASize.full`. |
-| `withView(view)`    | `View`        | Required for `inStream` format. Do not call this method for `outStream`. Pass the view containing the ad.                                             |
+| Method              | Type                 | Description                                                                                               |
+| ------------------- | -------------------- | --------------------------------------------------------------------------------------------------------- |
+| `withMedia(player)` | `MediaPlayer`        | Required for `inStream` format. Do not call this method if using `outStream`                              |
+| `withType(type)`    | `IMARequest.IMAType` | Receives the value `IMARequest.IMAType.inStream` or `IMARequest.IMAType.outStream`.                       |
+| `withView(view)`    | `View`               | Required for `inStream` format. Do not call this method for `outStream`. Pass the view containing the ad. |
 
 ### Implementation
 
@@ -104,9 +103,9 @@ private func createVideoView(player: AVPlayer) -> UIView {
 
 **`IMARequest.Builder`** provides a set of methods to configure the video ad, including:
 
-| Enum                 | Value               | Description                                                             |
-| -------------------- | ------------------- | ----------------------------------------------------------------------- |
-| `IMARequest.IMASize` | `medium` and `full` | `medium` for Native ads, `full` for Interstitial, Open and Rewarded ads |
+| Method           | Type                 | Description                                                                                                                                           |
+| ---------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `withSize(size)` | `IMARequest.IMASize` | Required for `outStream` format. Do not call this method for `inStream`. Receives the value `IMARequest.IMASize.medium` or `IMARequest.IMASize.full`. |
 
 ### Implementation
 

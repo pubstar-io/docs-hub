@@ -20,12 +20,11 @@ PubStar supports two types of video ads:
 
 **`IMARequest.Builder`** provides a set of methods to configure the video ad, including:
 
-| Method              | Type          | Description                                                                                                                                      |
-| ------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `withMedia(player)` | `MediaPlayer` | Required for `IN_STREAM` format. Do not call this method if using `OUT_STREAM`                                                                   |
-| `withType(type)`    | `Enum`        | Receives the value `IMARequest.Type.IN_STREAM` or `IMARequest.Type.OUT_STREAM`.                                                                  |
-| `withSize(size)`    | `Enum`        | Required for `OUT_STREAM` format. Do not call this method for `IN_STREAM`. Receives the value `IMARequest.Size.Medium` or `IMARequest.Size.Full`. |
-| `withView(view)`    | `View`        | Required for `IN_STREAM` format. Do not call this method for `OUT_STREAM`. Pass the view containing the ad.                                      |
+| Method              | Type          | Description                                                                                                 |
+| ------------------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
+| `withMedia(player)` | `MediaPlayer` | Required for `IN_STREAM` format. Do not call this method if using `OUT_STREAM`                              |
+| `withType(type)`    | `Enum`        | Receives the value `IMARequest.Type.IN_STREAM` or `IMARequest.Type.OUT_STREAM`.                             |
+| `withView(view)`    | `View`        | Required for `IN_STREAM` format. Do not call this method for `OUT_STREAM`. Pass the view containing the ad. |
 
 ### Implementation
 
@@ -75,9 +74,9 @@ this.createVideo(
 
 **`IMARequest.Builder`** provides a set of methods to configure the video ad, including:
 
-| Enum              | Value            | Description                                                             |
-| ----------------- | ---------------- | ----------------------------------------------------------------------- |
-| `IMARequest.Size` | `Medium` and `Full` | `Medium` for Native ads, `Full` for Interstitial, Open and Rewarded ads |
+| Method           | Type   | Description                                                                                                                                       |
+| ---------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `withSize(size)` | `Enum` | Required for `OUT_STREAM` format. Do not call this method for `IN_STREAM`. Receives the value `IMARequest.Size.Medium` or `IMARequest.Size.Full`. |
 
 ### Implementation
 

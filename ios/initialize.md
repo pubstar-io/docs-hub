@@ -1,9 +1,9 @@
 # Initialize SDK
 
-### initAd()
+## initAd()
 Initialization PubStar SDK. Initialization must be called once before loading or showing ads.
 
-### Event
+## Event
 
 `InitAdListenerHandler`
 
@@ -12,7 +12,7 @@ Initialization PubStar SDK. Initialization must be called once before loading or
 | `onDone`  | call when PubStar SDK initializes successfully           |
 | `onError` | call when load ad failed. return object type `ErrorCode` |
 
-### Example
+### Implementation
 
 ```swift
 import Pubstar
