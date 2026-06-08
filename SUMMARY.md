@@ -9,6 +9,8 @@
   * [Interstitial, Open and Rewarded](ios/ads-with-no-view.md)
   * [Banner](ios/banner.md)
   * [Native](ios/native.md)
+  * [AdMob Mediation](ios/mediation-admob.md)
+  * [AppLovin MAX Mediation](ios/mediation-max.md)
   * [Video](ios/video.md)
   * [Troubleshooting](ios/troubleshooting.md)
 
@@ -18,6 +20,8 @@
   * [Interstitial, Open and Rewarded](android/ads-with-no-view.md)
   * [Banner](android/banner.md)
   * [Native](android/native.md)
+  * [AdMob Mediation](android/mediation-admob.md)
+  * [AppLovin MAX Mediation](android/mediation-max.md)
   * [Video](android/video.md)
 
 * **React Native SDK**
