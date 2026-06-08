@@ -56,6 +56,44 @@ implementation 'io.pubstar.mediation.adapter.admob:ads:1.6.0'
 
 Please refer to the [AndroidManifest.xml Configuration Guide](integration.md#1-update-your-androidmanifest) to set up your PubStar App ID.
 
+### 2. Consent (GDPR / UMP) — gather before init
+
+For users in regions that require consent (EEA, UK, etc.), you **must gather consent before initializing** the SDK. PubStar uses Google's **User Messaging Platform (UMP)**. If consent has not been resolved, `init(...)` does not start and reports `ErrorCode.CONSENT_NOT_SETTING` (`-10`) in `onError`.
+
+Correct order: **`gatherConsent(...)` → then `init(...)` inside the completion callback.**
+
+```kotlin
+PubStarAdManager.gatherConsent(
+    this, // Activity
+    object : GoogleMobileAdsConsentManager.OnConsentGatheringCompleteListener {
+        override fun consentGatheringComplete(error: FormError?) {
+            // error is null on success; the consent form (if required) has already been shown.
+            // Initialize PubStar only after consent has been gathered.
+            PubStarAdManager.getInstance()
+                .setInitAdListener(object : InitAdListener {
+                    override fun onDone() {
+                        // ready to load and show ads
+                    }
+
+                    override fun onError(code: ErrorCode) {
+                        // init error
+                    }
+                })
+                .init(this@YourActivity)
+        }
+    }
+)
+```
+
+- `gatherConsent(...)` requests the latest consent info and automatically shows the consent form if required, then calls `consentGatheringComplete`.
+- Call this from an **Activity** (the consent form is a UI dialog), typically on your splash/loading screen.
+- The callback's `FormError?` is `com.google.android.ump.FormError`. UMP ships with the Google Mobile Ads SDK that PubStar already uses. If your app doesn't otherwise depend on GMA and the `FormError` import can't be resolved, add the UMP dependency:
+  ```kotlin
+  implementation("com.google.android.ump:user-messaging-platform:3.1.0")
+  ```
+
+> Outside consent-required regions, `canRequestAds()` is already true, so you can call `init(...)` directly — but routing every launch through `gatherConsent(...)` first is safe everywhere and avoids `CONSENT_NOT_SETTING`.
+
 ---
 
 ## AdMob mediation setup

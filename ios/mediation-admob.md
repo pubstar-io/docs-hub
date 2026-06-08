@@ -41,6 +41,47 @@ Run `pod install`, then open `.xcworkspace`.
 ### 1. Add PubStar App ID to Info.plist
 
 Please refer to the [Info.plist Configuration Guide](integration.md#1-update-your-infoplist) to set up your PubStar App ID.
+                                                     
+### 2. Consent (GDPR / UMP) — gather before init
+
+For users in regions that require consent (EEA, UK, etc.), you must gather consent **before** initializing the SDK. PubStar uses Google's **User Messaging Platform (UMP)**. If consent has not been resolved, `initAd()` does not start and reports `ErrorCode.CONSENT_NOT_SETTING` (`-10`) in `onError`.
+
+Correct order: `gatherConsent(...)` → then `initAd()` inside the completion callback.
+
+```swift
+import Pubstar
+
+PubStarAdManager.gatherConsent(
+    from: self, // UIViewController
+    listener: ConsentGatheringCompleteHandler(onComplete: { error in
+        // error is nil on success; the consent form (if required) has already been shown.
+        // Initialize PubStar only after consent has been gathered.
+        PubStarAdManager.getInstance()
+            .setInitAdListener(InitAdListenerHandler(
+                onDone: {
+                    // ready to load and show ads
+                },
+                onError: { code in
+                    // init error
+                }
+            ))
+            .initAd()
+    })
+)
+```
+
+- `gatherConsent(...)` requests the latest consent info and automatically shows the consent form if required, then calls the completion listener.
+- Call this from a `UIViewController` (the consent form is a UI dialog), typically on your splash/loading screen.
+- The completion's `Error?` is the UMP form error (`nil` on success). UMP ships with the Google Mobile Ads SDK that PubStar already uses (declared via the `GoogleUserMessagingPlatform` dependency).
+- To exercise the form on a test device, enable debug mode before gathering:
+  ```swift
+  GoogleMobileAdsConsentManager.shared.setDebug(
+      enabled: true,
+      geography: .EEA,
+      testDeviceIdentifiers: ["<YOUR_TEST_DEVICE_ID>"]
+  )
+  ```
+- Outside consent-required regions, `GoogleMobileAdsConsentManager.shared.canRequestAds()` is already `true`, so you can call `initAd()` directly — but routing every launch through `gatherConsent(...)` first is safe everywhere and avoids `CONSENT_NOT_SETTING`.
 
 ---
 
