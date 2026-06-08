@@ -11,6 +11,7 @@
   * [Native](ios/native.md)
   * [AdMob Mediation](ios/mediation-admob.md)
   * [AppLovin MAX Mediation](ios/mediation-max.md)
+  * [Video](ios/video.md)
   * [Troubleshooting](ios/troubleshooting.md)
 
 * **Android SDK**
@@ -21,6 +22,7 @@
   * [Native](android/native.md)
   * [AdMob Mediation](android/mediation-admob.md)
   * [AppLovin MAX Mediation](android/mediation-max.md)
+  * [Video](android/video.md)
 
 * **React Native SDK**
   * [Integration](react-native/integration.md)

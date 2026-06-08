@@ -29,7 +29,7 @@ PubStar supports the following ad formats:
 - Interstitial Ads
 - App Open Ads
 - Rewarded Ad
-- Video Ads (supported on selected platforms)
+- Video Ads
 
 All formats are responsive and optimized for performance and revenue maximization.
     

@@ -2,12 +2,22 @@
 
 Load and immediately show an Banner ads by ID.
 
-### Event
+## Event
 
 `AdLoaderListener`
 `AdShowedListener`
 
-### Example
+## API
+
+**`BannerAdRequest.Builder`** provides a set of methods to configure the banner ad, including:
+
+| Method                         | Type                    | Description                                                                                                                                                                      |
+| ------------------------------ | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `withView(view)`               | `View`                  | Passes a `View` that will be used to render the Banner Ad. This view serves as the container for the banner ad, allowing you to integrate it seamlessly into your app's layout.  |
+| `backgroundResource(resource)` | `Drawable`              | Sets the background of the banner ad when loading. Accepts a `Drawable` resource to customize the background appearance during the loading phase.                                |
+| `tag(tag)`                     | `BannerAdRequest.AdTag` | Sets the size of the banner ad. The tag parameter uses the Tag enum, allowing predefined options such as `Small`, `Medium`, `Big`, or `Full` for flexible layout configurations. |
+
+### Implementation
 
 ```swift
 var viewController: UIViewController = PubStarUtils.getHostingViewController()
