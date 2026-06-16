@@ -29,13 +29,14 @@
   * [Initialize](react-native/initialize.md)
   * [Interstitial, Open and Rewarded](react-native/ads-with-no-view.md)
   * [Banner and Native](react-native/banner-native.md)
+  * [Video (IMA)](react-native/video.md)
 
 * **Flutter SDK**
   * [Integration](flutter/integration.md)
   * [Initialize](flutter/initialize.md)
   * [Interstitial, Open and Rewarded](flutter/ads-with-no-view.md)
   * [Banner and Native](flutter/banner-native.md)
-  * [Video](flutter/video.md)
+  * [Video (IMA)](flutter/video.md)
 
 * **Unity SDK**
   * [Integration](unity/integration.md)
