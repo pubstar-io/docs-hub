@@ -44,5 +44,6 @@
   * [Interstitial, Open and Rewarded](unity/ads-with-no-view.md)
   * [Banner](unity/banner.md)
   * [Native](unity/native.md)
+  * [Video (IMA)](unity/video.md)
 
 * [Support](SUPPORT.md)
