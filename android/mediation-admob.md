@@ -39,7 +39,7 @@ repositories {
 Dependency.
 
 ```bash
-implementation 'io.pubstar.mobile:ads:1.6.0'
+implementation 'io.pubstar.mobile:ads:1.6.+'
 ```
 
 ### AdMob mediation adapter (required)
@@ -47,7 +47,7 @@ implementation 'io.pubstar.mobile:ads:1.6.0'
 To serve PubStar demand through AdMob custom events, add the AdMob mediation adapter alongside the core PubStar SDK:
 
 ```bash
-implementation 'io.pubstar.mediation.adapter.admob:ads:1.6.0'
+implementation 'io.pubstar.mediation.adapter.admob:ads:1.6.+'
 ```
 
 ## Configuration
@@ -105,7 +105,7 @@ After your app includes the SDK, adapter, and manifest key, configure AdMob so t
 1. Create a mediation group per ad format.
 2. Attach the correct Android ad units.
 3. Add custom events with PubStar's class name and your placement key.
-4. Test on a device with a build that includes PubStar `1.6.0`.
+4. Test on a device with a build that includes PubStar `1.6.+`.
 
 ### Mediation group setup
 
@@ -207,7 +207,7 @@ Test keys pair with App ID `pub-app-id-1233`. Replace them with production place
 
 ### Validation checklist
 
-- `implementation 'io.pubstar.mobile:ads:1.6.0'` and AdMob adapter `1.6.0` are in your app.
+- `implementation 'io.pubstar.mobile:ads:1.6.+'` and AdMob adapter `1.6.+` are in your app.
 - `io.pubstar.key` in AndroidManifest uses your real PubStar App ID.
 - Class Name is exactly `io.pubstar.mediation.adapter.admob.PubStarMediationAdapter`.
 - Parameter contains the correct placement key for that format.

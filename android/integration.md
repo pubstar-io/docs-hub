@@ -17,7 +17,7 @@ repositories {
 Dependency.
 
 ```bash
-implementation 'io.pubstar.mobile:ads:1.6.0'
+implementation 'io.pubstar.mobile:ads:1.6.+'
 ```
 
 ### Ad Network Adapters (Optional)
@@ -28,31 +28,31 @@ Add the desired adapters to your Podfile alongside the core PubStar SDK:
 
 ```ruby
 # Facebook
-implementation 'io.pubstar.facebook.adapter:ads:1.6.0'
+implementation 'io.pubstar.facebook.adapter:ads:1.6.+'
 
 # Mintegral
-implementation 'io.pubstar.mintegral.adapter:ads:1.6.0'
+implementation 'io.pubstar.mintegral.adapter:ads:1.6.+'
 
 # Pangle
-implementation 'io.pubstar.pangle.adapter:ads:1.6.0'
+implementation 'io.pubstar.pangle.adapter:ads:1.6.+'
 
 # InMobi
-implementation 'io.pubstar.inmobi.adapter:ads:1.6.0'
+implementation 'io.pubstar.inmobi.adapter:ads:1.6.+'
 
 # Appodeal
-implementation 'io.pubstar.appodeal.adapter:ads:1.6.0'
+implementation 'io.pubstar.appodeal.adapter:ads:1.6.+'
 
 # Yandex
-implementation 'io.pubstar.yandex.adapter:ads:1.6.0'
+implementation 'io.pubstar.yandex.adapter:ads:1.6.+'
 
 # Vungle
-implementation 'io.pubstar.vungle.adapter:ads:1.6.0'
+implementation 'io.pubstar.vungle.adapter:ads:1.6.+'
 
 # OfferWall
-implementation 'io.pubstar.offerwall.adapter:ads:1.6.0'
+implementation 'io.pubstar.offerwall.adapter:ads:1.6.+'
 
 # Unity
-implementation 'io.pubstar.unity.adapter:ads:1.6.0'
+implementation 'io.pubstar.unity.adapter:ads:1.6.+'
 ```
 
 ## Configuration

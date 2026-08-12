@@ -39,7 +39,7 @@ repositories {
 Dependency.
 
 ```bash
-implementation 'io.pubstar.mobile:ads:1.6.0'
+implementation 'io.pubstar.mobile:ads:1.6.+'
 ```
 
 ### MAX mediation adapter (required)
@@ -47,7 +47,7 @@ implementation 'io.pubstar.mobile:ads:1.6.0'
 To serve PubStar demand through MAX custom network placements, add the AppLovin MAX adapter alongside the core PubStar SDK:
 
 ```bash
-implementation 'io.pubstar.mediation.adapter.applovin:ads:1.6.0'
+implementation 'io.pubstar.mediation.adapter.applovin:ads:1.6.+'
 ```
 
 ## Configuration
@@ -67,7 +67,7 @@ After your app includes the SDK, adapter, and manifest key, configure MAX so the
 1. Create an SDK custom network with PubStar's adapter class name.
 2. For each MAX ad unit, enable the PubStar custom network and add one or more placements (by CPM).
 3. Set each placement's **Placement ID** to your PubStar placement key (plain text).
-4. Test on a physical device with a build that includes PubStar `1.6.0`.
+4. Test on a physical device with a build that includes PubStar `1.6.+`.
 
 ### Custom network setup
 
@@ -136,7 +136,7 @@ Test IDs pair with App ID `pub-app-id-1233`. Replace them with production placem
 
 ### Validation checklist
 
-- `implementation 'io.pubstar.mobile:ads:1.6.0'` and MAX adapter `1.6.0` are in your app.
+- `implementation 'io.pubstar.mobile:ads:1.6.+'` and MAX adapter `1.6.+` are in your app.
 - `io.pubstar.key` in AndroidManifest uses your real PubStar App ID.
 - Android Adapter Class Name is exactly `com.applovin.mediation.adapters.PubStarApplovinAdapter`.
 - App ID on each placement matches your PubStar App ID (for example `pub-app-id-1233`).
