@@ -29,8 +29,8 @@ platform :ios, '13.0'
 target 'YourAppTarget' do
   use_frameworks! :linkage => :static
 
-  pod 'Pubstar', '~> 1.6.0'
-  pod 'PubStarMediationMaxAdapter', '~> 1.6.0'
+  pod 'Pubstar', '~> 1.6.2'
+  pod 'PubStarMediationMaxAdapter', '~> 1.6.2'
 end
 ```
 

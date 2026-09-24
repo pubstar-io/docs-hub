@@ -37,3 +37,17 @@ pod install
 ```
 
 Clean and rebuild the project before running again.
+
+### 3. The app crashes at launch with `Missing required key 'io.pubstar.key' in Info.plist`
+
+From **1.6.2**, the SDK requires your PubStar App ID and stops at initialization when it is missing or empty. It calls your init listener's `onError` with `INIT_ERROR` first, then ends the process with this message. Earlier versions did not fail here: they fell back to a built-in debug App ID, so the app ran but every report it sent — sessions and crashes included — went to the debug app instead of yours.
+
+**Required Fix**
+Add your App ID to `Info.plist`:
+
+```xml
+<key>io.pubstar.key</key>
+<string>pub-app-id-XXXX</string>
+```
+
+Replace `pub-app-id-XXXX` with the App ID shown for your app in the PubStar Dashboard, then rebuild.
