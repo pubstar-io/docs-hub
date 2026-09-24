@@ -43,6 +43,8 @@ Update your app's Info.plist file to add several keys:
 
 - A `io.pubstar.key` key with a string value of your PubStar ad ID [found in the PubStar Dashboard](https://pubstar.io/).
 
+  > **Required.** From **1.6.2**, the SDK stops at initialization if `io.pubstar.key` is missing or empty (`Missing required key 'io.pubstar.key' in Info.plist`), the same way Android always has. Earlier iOS versions silently fell back to a built-in debug App ID, so the app ran normally while every report it sent went to the wrong app. Use the App ID of your own app from the PubStar Dashboard.
+
 - SKAdNetworkItems in Google AdMob refers to the necessary configuration within your iOS app's Info.plist file to support Apple's SKAdNetwork for conversion tracking, particularly when using the Google Mobile Ads SDK for AdMob [found in the AdMob privacy](https://developers.google.com/admob/ios/privacy/strategies).
 
 ```xml
